@@ -1,6 +1,11 @@
 while True:
-    number1 = float(input("Skriv første tall: ")) #gir brukeren mulighet til å skrive inn tall
-    number2 = float(input("Skriv andre tall: "))
+    try:
+        number1 = float(input("Skriv første tall: ")) #gir brukeren mulighet til å skrive inn tall og sjekker om input er et tall
+        number2 = float(input("Skriv andre tall: "))
+    except ValueError:
+        print("Du må skrive bare et tall!") #håndterer feilen hvis input ikke er et tall
+        continue #starter på nytt hvis input ikke er et tall
+
 
     operator = input("Skriv tegnet på operasjonen (for eksempel: '*', '/', '+', '-', '%', '**', '//'): ")
 
