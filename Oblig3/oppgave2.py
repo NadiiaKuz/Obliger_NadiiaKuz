@@ -1,6 +1,5 @@
 from random import randrange
 
-
 def print_number():
     number = randrange(101)
 

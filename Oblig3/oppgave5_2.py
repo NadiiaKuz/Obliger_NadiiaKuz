@@ -12,7 +12,7 @@ print("------------------------------------------")
 
 def movies_printimg(movies):
     for movie in movies:
-        print(f"{movie["name"]} - {movie["year"]} has a riting of {movie["rating"]}")
+        print(f"{movie['name']} - {movie['year']} has a riting of {movie['rating']}")
 
 movies_printimg(movies)
 print("------------------------------------------")
@@ -41,4 +41,3 @@ def selection_movies_by_year(movies, year):
     return new_movies
 
 print(selection_movies_by_year(movies, 2010))
-

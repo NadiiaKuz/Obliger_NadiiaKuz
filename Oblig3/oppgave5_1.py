@@ -34,7 +34,7 @@ def add_movie(new_movies, name, year, rating = None):
 
 add_movie(movies, "Movie7", 2003)
 add_movie(movies, "Movie8", 2004, 7.3)
-add_movie(movies, "Modie9", 2005)
+add_movie(movies, "Movie9", 2005)
 
 for movie in movies:
     print(movie)
