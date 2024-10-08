@@ -6,7 +6,7 @@ movie_2 = {"name":"Inside Out", "year":2015, "rating":8.1}
 movie_3 = {"name":"Con Air", "year":1997, "rating":6.9}
 
 movies = [movie_1, movie_2, movie_3]
-print(movies)
+print(movies) # Printer ut en liste for å sjekke innholdet
 print("------------------------------------------")
 
 # B)Opprett en funksjon som legger til en film i filmlisten.
