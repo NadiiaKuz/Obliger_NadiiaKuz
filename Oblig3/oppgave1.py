@@ -6,7 +6,7 @@ student = {
 print(student)
 print("--------------------------------------------------")
 
-print(f"Studentens fullstendige navn er {student["first name"]} {student["last name"]}")
+print(f"Studentens fullstendige navn er {student['first name']} {student['last name']}")
 print("--------------------------------------------------")
 
 student["favourite course"] = "ITF10219 " + student["favourite course"]
