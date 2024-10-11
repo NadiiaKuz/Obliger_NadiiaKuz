@@ -10,13 +10,13 @@ print("------------------------------------------")
 
 # A) Opprett en funksjon som tar en liste med filmer, og filnavn som parameter.
 
-def adding_movie_to_file(movies, filnavn):
+def add_movie_to_file(movies, filnavn):
     with open(filnavn, 'w') as fil: #åpner eller lagrer fil. 'w'(write) - overskriver innhold.
         for movie in movies:
             text = f"{movie['name']} - {movie['year']} has a rating of {movie['rating']}\n"
             fil.write(text) # skriver teksten til fil
 
-adding_movie_to_file(movies, "movies.txt")
+add_movie_to_file(movies, "movies.txt")
 
 # B) Lag en funksjon som leser den samme filen og skriver ut innholdet
 
