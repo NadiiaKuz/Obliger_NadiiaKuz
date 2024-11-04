@@ -11,6 +11,10 @@ while True:
         deck.shuffle_deck()
         print("Deck reshuffled due to low card count.")
 
+    if (chips == 0):
+        print("Sorry! You do not have any chips to bet")
+        break
+
     while True:
         try:
             bet_chips = int(input(f"You currently have {chips} chips. How many do you bet?: "))
@@ -20,9 +24,9 @@ while True:
                 break
         except ValueError:
             print("Invalid input!")
-
-    print(f"You bet {bet_chips} chips out of your {chips} total.")
     chips -= bet_chips
+    print(f"You bet {bet_chips} chips. You have {chips} left after betting.")
+
 
     player_hand = [deck.deal_card(), deck.deal_card()]
     dealer_hand = [deck.deal_card(), deck.deal_card()]
