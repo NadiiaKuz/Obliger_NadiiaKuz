@@ -13,11 +13,10 @@ def calculate_score(hand):
         ace_count -= 1
     return score
 
-
 def play_player (deck, player_hand):
     while True:
         print("----------------------------------------------------------------------------------")
-        try:
+        try: #sjekker at input 1 eller 2
             hit_or_stand_choice = int(input("Do you wish to hit or stand? \n 1 - Hit \n 2 - Stand \n Answer: "))
             if hit_or_stand_choice not in [1, 2]:
                 print("Invalid choice. Please enter 1 for Hit or 2 for Stand.")
@@ -35,15 +34,13 @@ def play_player (deck, player_hand):
             score = calculate_score(player_hand)
             print(f"The total value of your hand is now {score}")
 
-            if score > 21:
+            if score > 21: # spilleren taper, spillet er over
                 print("----------------------------------------------------------------------------------")
                 print(f"Bust! You lose")
                 return False
-
         else:
             print("You chose to Stand")
             return True
-
 
 def play_dealer (deck, dealer_hand):
     while calculate_score(dealer_hand) < 17:
@@ -52,7 +49,6 @@ def play_dealer (deck, dealer_hand):
     for card in dealer_hand:
         print(f"- {card}")
     return dealer_hand
-
 
 def get_winner (player_score, dealer_score, chips, bet_chips):
     if (dealer_score > 21 or player_score > dealer_score):
@@ -64,7 +60,6 @@ def get_winner (player_score, dealer_score, chips, bet_chips):
         print("No one wins")
         chips += bet_chips
     return chips
-
 
 def play_again():
     while True:
