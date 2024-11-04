@@ -1,6 +1,5 @@
 import random
 
-
 class Cart:
     def __init__(self, rank, suit, value):
         self.rank = rank
@@ -8,7 +7,6 @@ class Cart:
         self.value = value
     def __str__(self):
         return f"{self.rank} of {self.suit}"
-
 
 
 class Deck:
