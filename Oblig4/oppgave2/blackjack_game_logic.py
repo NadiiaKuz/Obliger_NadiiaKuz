@@ -52,12 +52,12 @@ def play_dealer (deck, dealer_hand):
 
 def get_winner (player_score, dealer_score, chips, bet_chips):
     if (dealer_score > 21 or player_score > dealer_score):
-        print("You wins!")
+        print("You win!")
         chips += bet_chips * 2
     elif (dealer_score > player_score):
-        print("Dealer wins!")
+        print("Dealer win!")
     else:
-        print("No one wins")
+        print("No one win")
         chips += bet_chips
     return chips
 

@@ -19,7 +19,7 @@ class Deck:
     def build_deck(self):
         return [Cart(rank, suit, self.values[rank]) for suit in self.suits for rank in self.ranks]
 
-    #blander kortstokken
+    # blander kortstokken
     def shuffle_deck(self):
         random.shuffle(self.cards)
 
