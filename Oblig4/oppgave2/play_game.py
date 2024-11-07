@@ -5,7 +5,7 @@ chips = 7
 while True:
     if (chips == 0):
         print("Sorry! You do not have any chips to bet")
-        break
+        break # spillet stopper hvis spilleren ikke har noen chips
 
     if (len(deck.cards) < 15):
         deck = b.get_new_deck()
@@ -15,6 +15,7 @@ while True:
     chips -= bet_chips
     print(f"You bet {bet_chips} chips. You have {chips} left after betting.")
 
+    # spillet begynner
     player_hand = [deck.deal_card(), deck.deal_card()]
     dealer_hand = [deck.deal_card(), deck.deal_card()]
 
@@ -31,7 +32,7 @@ while True:
         chips += bet_chips * 2
 
     else:
-        while True:
+        while True: #while-løkke for spiller spill
             print("----------------------------------------------------------------------------------")
             hit_or_stand_choice = b.get_hit_of_stand()
             overdraft = False
@@ -39,6 +40,7 @@ while True:
             if hit_or_stand_choice == 1:
                 player_hand.append(deck.deal_card())
 
+                print("----------------------------------------------------------------------------------")
                 print(f"You have been dealt one card. Your hand now consists of the following cards:")
                 for card in player_hand:
                     print(f"- {card}")
@@ -47,15 +49,15 @@ while True:
 
                 if (player_score > 21):
                     print("Bust! You lose!")
-                    print(f"You have {chips} chips")
                     overdraft = True
-                    break
+                    break #spillet stopper hvis spilleren taper
 
             else:
                 print("You chose to Stand")
                 break
 
         if (not overdraft):
+            print("----------------------------------------------------------------------------------")
             # Hvis spilleren ikke har busted, spiller dealeren
             dealer_hand = b.play_dealer(deck, dealer_hand)
 

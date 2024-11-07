@@ -5,6 +5,7 @@ def get_new_deck():
     deck.shuffle_deck()
     return deck
 
+# funksjon for å sjekke spillerens innsats
 def make_bet(chips):
     while True:
         try:
