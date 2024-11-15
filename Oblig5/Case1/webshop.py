@@ -1,11 +1,12 @@
 #------------------------------------------
 #Oppgaver
 #------------------------------------------
-
+"""Case 1 - Oppgave 1"""
 def print_ware_information(ware):
     '''Funksjonsbeskrivelse: Printer ut informasjon om en spesifisert vare.'''
     print(f"Name: {ware['name']} \nPrice: {ware['price']},- \nNumber in stock: {ware['number_in_stock']} \nDescription: {ware['description']}\n")
 
+"""Case 1 - Oppgave 2"""
 def calculate_average_ware_rating(ware):
     '''Returnerer den gjennomsnittlige ratingen for en spesifisert vare.'''
     try:
@@ -15,15 +16,16 @@ def calculate_average_ware_rating(ware):
     except ZeroDivisionError:
         print("Det finnes ingen rating")
 
+"""Case 1 - Oppgave 3"""
 def get_all_wares_in_stock(all_wares):
     '''Returnerer en dictionary med alle varer som er på lager.'''
-    ny_wares = {}
+    wares_in_stock = {}
     for ware_key, ware_value in all_wares.items():
         if ware_value['number_in_stock'] > 0:
-            ny_wares[ware_key] = ware_value
-    return ny_wares
+            wares_in_stock[ware_key] = ware_value
+    return wares_in_stock
 
-
+"""Case 1 - Oppgave 4"""
 def is_number_of_ware_in_stock(ware, number_of_ware):
     '''Returnerer en Boolean-verdi som representerer om et spesifisert antall av en gitt vare finnes på lager.'''
     if ware['number_in_stock'] >= number_of_ware:
@@ -31,6 +33,7 @@ def is_number_of_ware_in_stock(ware, number_of_ware):
     else:
         return False
 
+"""Case 1 - Oppgave 5"""
 def add_number_of_ware_to_shopping_cart(ware_key, ware, shopping_cart, number_of_ware=1):
     '''Legger til et spesifisert antall av en gitt vare i en spesifisert handlevogn.'''
     if is_number_of_ware_in_stock(ware, number_of_ware):
@@ -44,14 +47,15 @@ def add_number_of_ware_to_shopping_cart(ware_key, ware, shopping_cart, number_of
         print(f"{ware['name']} is not in stock and could not be added to the shopping cart.")
     return shopping_cart
 
+"""Case 1 - Oppgave 6"""
 def calculate_shopping_cart_price(shopping_cart, all_wares, tax=25):
     '''Returnerer prisen av en handlevogn basert på varene i den.'''
-    price = 0
+    total_price = 0
     for ware_key, ware_value in shopping_cart.items():
         if ware_key in all_wares:
-            price += all_wares[ware_key]["price"] * ware_value
-    full_price = price + price * tax / 100
-    return round(full_price, 1)
+            total_price += all_wares[ware_key]["price"] * ware_value
+    price_with_tax = total_price + total_price * tax / 100
+    return round(price_with_tax, 1)
 
 def can_afford_shopping_cart(shopping_cart_price, wallet):
     '''Returnerer en Boolean-verdi basert på om det er nok penger i en gitt lommebok for å kjøpe en handlevogn.'''
